@@ -8,6 +8,8 @@ $pets = mysqli_query($connection,"SELECT * FROM `pets`");
 <meta charset=utf-8>
 
 <head>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <srcipt src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></srcipt>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
@@ -52,6 +54,15 @@ $pets = mysqli_query($connection,"SELECT * FROM `pets`");
             text-decoration: none;
         }
 
+        .content{
+            animation-duration: 1.5s;
+            animation-name: top-moving;
+        }
+        @keyframes top-moving {
+             from { margin-top:500px; }
+            to { margin-top: 0px; }
+        
+        }
         a:hover {
             color: #e25a5a;
             text-decoration: none;
@@ -74,7 +85,7 @@ $pets = mysqli_query($connection,"SELECT * FROM `pets`");
         
         <div style=" background-color: #222222;" class="">
             <div style="" class="row">
-                  <div class="col-5" style="margin-top: auto; margin-bottom: auto; padding:auto auto;">
+                  <div class="col-5" style="margin-top: auto; margin-bottom: auto; padding:67px 68px;">
         <div id="mySlider" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -86,8 +97,11 @@ $pets = mysqli_query($connection,"SELECT * FROM `pets`");
             </div>
         </div>
         </div>
-                <div style="font-size:40px; margin-top: auto; margin-bottom: auto; padding:75px 75px;" class="col-7"><p>А как насчет нового коронавируса COVID-19? Могут ли заболевшие владельцы "поделиться" с питомцем COVID-19, и, наоборот, способны ли кошки и собаки инфицированного владельца участвовать в распространении нового вируса?Нет, не способны. А вы - можете.
-В рекомендациях Всемирной организации по охране здоровья животных (МЭБ) особо подчеркивается важность того, что COVID-19 не должен повлечь за собой принятие неприемлемых мер в отношении домашних или диких животных, которые могут поставить под удар их благополучие и здоровье.</p></div>
+                <div style="font-size:40px; margin-top: auto; margin-bottom: auto; padding:75px 75px;" class="col-7"><p>А как насчет нового коронавируса COVID-19? 
+                Могут ли заболевшие владельцы "поделиться" с питомцем COVID-19, и, наоборот, способны ли кошки и собаки инфицированного владельца участвовать в распространении нового вируса?
+                Нет, не способны. А вы - можете.<p>
+                <p>В рекомендациях Всемирной организации по охране здоровья животных (МЭБ) особо подчеркивается важность того,
+                 что COVID-19 не должен повлечь за собой принятие неприемлемых мер в отношении домашних или диких животных, которые могут поставить под удар их благополучие и здоровье.</p></div>
         </div>
         </div>
         
@@ -96,15 +110,18 @@ $pets = mysqli_query($connection,"SELECT * FROM `pets`");
 				{
         ?>
     <div>
-        <div class="col-8 mx-auto" style=" background-color: #222222">
-            <h1 style="font-size: 150px;" class="text-center">Как спасти</h1>
+                    
+        <div class="col-9 mx-auto"  data-aos="fade-up" data-aos-anchor-placement="center-bottom"  style="background-color: #222222">
+            <div style="background-color:#e25a5a; padding: 10px; text-transform: lowercase;">
+                <h1 style="font-size: 150px; color:#222222;" class="text-center">Как спасти</h1>
+            </div>
             <div class="row" style="padding: 20px; margin-top: 30px;">
-                <div class="col-6 mx-auto" style="background-color: #222222; padding: 15px;">
+                <div class="col-6 mx-auto"  data-aos="fade-up" data-aos-anchor-placement="center-bottom" style="background-color: #222222; padding: 15px;">
                     <a href="pages.php?id=<?php echo $pet['articles_id']; ?>">
                         <img style="cursor:pointer;" src="material/cat.jpg" alt="" class="w-100">
                     </a>
                 </div>
-                <div class="col-6 mx-auto" style="background-color: #222222; padding: 15px;">
+                <div class="col-6 mx-auto"  data-aos="fade-up" data-aos-anchor-placement="center-bottom"  style="background-color: #222222; padding: 15px;">
                     <?php 
 			while($pet = mysqli_fetch_assoc($pets))
 				{
@@ -115,6 +132,7 @@ $pets = mysqli_query($connection,"SELECT * FROM `pets`");
                 </div>
             </div>
         </div>
+       
         <?php 
 				}
 				?>
@@ -123,9 +141,8 @@ $pets = mysqli_query($connection,"SELECT * FROM `pets`");
 				?>
     </div>
     </div>
-    <script>
-
-    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="includes/app.js"></script>
 </body>
 
 </html>

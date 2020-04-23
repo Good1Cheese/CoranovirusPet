@@ -8,6 +8,12 @@ $pet = mysqli_fetch_assoc($pets);
 <html>
 
 <head>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <srcipt src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></srcipt>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>coronovirus</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -50,7 +56,9 @@ $pet = mysqli_fetch_assoc($pets);
             min-width: 100%;
             background-size: 100%;
             background-repeat: no-repeat;
+            background-attachment: fixed;
             margin: 0;
+            background-image: url(material/bg.jpg);
         }
 
         .titles {
@@ -84,54 +92,75 @@ $pet = mysqli_fetch_assoc($pets);
     <?php 
     require "includes/header.php";
     ?>
-    <div class="main">
+    <div style="background-color:rgba(34,34,34,0.7);" class="main">
         <div style="text-decoration: none; display: block; margin:15px 0 0 120px;">
             <a class="link" style="color: white; text-decoration: none;" href="/">главная</a> - <a class="link" style="color: white; text-decoration: none;" href=""><?php echo $pet['pet']?></a>
-            <h1 style="">коронавирус у <?php echo $pet['pet']?></h1>
+            <h1 style="color:#e25a5a;">коронавирус у <?php echo $pet['pet']?></h1>
             <p style="font-size:25px; margin-bottom:50px;"><?php echo $pet['text'] ?></p>
+            <p style="font-size:25px; margin-bottom:50px;"><?php echo $pet['text .1'] ?></p>
         </div>
         <div>
         
         </div>
+        <div class="col-12" style="background-color:rgba(226, 94, 90, 0.7);">
         <div class="col-6 mx-auto">
-        <div id="mySlider" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="material/image/<?php echo $pet['image 1'] ?>" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="material/image/<?php echo $pet['image 2'] ?>" class="d-block w-100">
-                </div>
+            <div id="mySlider" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="material/image/<?php echo $pet['image 1'] ?>" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="material/image/<?php echo $pet['image 2'] ?>" class="d-block w-100">
+                    </div>
 
-                <div class="carousel-item">
-                    <img src="material/image/<?php echo $pet['image 3'] ?>" class="d-block w-100">
+                    <div class="carousel-item">
+                        <img src="material/image/<?php echo $pet['image 3'] ?>" class="d-block w-100">
+                    </div>
                 </div>
+                <a href="#mySlider" role="button" data-slide="prev" class="carousel-control-prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a href="#mySlider" role="button" data-slide="next" class="carousel-control-next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-            <a href="#mySlider" role="button" data-slide="prev" class="carousel-control-prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a href="#mySlider" role="button" data-slide="next" class="carousel-control-next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
-            </div>
+        </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
         <div class="col-11"></div>
-
-        <div style="margin-top:50px; padding: 0px 25px;" class="col-11 mx-auto">
-	    <P><?php echo $pet['text 1']; ?></P>
+        <div style="margin-top:50px;  padding:  0 25px; background-color:#222222;" data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="col-11 mx-auto">
+        <?php
+         if ( (int) $_GET['id'] == 2 )
+        {
+        ?>
+         <div style="margin-top:50px;  padding: 25px 15px 25px 15px; background-color:#333333;" data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="col-11 mx-auto">
+          <P class="font-italic"><?php echo $pet['text 2.1']; ?></P>
+          <h1><?php echo $pet['title 1.1'] ?></h1>
+        <?php
+        } else 
+        {
+        ?>
+            <P class=""><?php echo $pet['text 1']; ?></P>
+        <?php 
+        }
+        ?>
+		</div>
+        <div style="margin-top:50px; padding: 0px 25px;" data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="col-11 mx-auto">
+	    <P><?php echo $pet['text 1.1']; ?></P>
 		</div>
 
-        <div style="margin-top:50px; padding: 0px 25px;" class="col-11 mx-auto">
-        <h1 class="col-12 title"><?php echo $pet['title 1'] ?></h1>
+        <div style="margin-top:50px; padding: 0px 25px;" data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="col-11 mx-auto">
+        <h1 class="cal-12 title"><?php echo $pet['title 1'] ?></h1>
 	    <P><?php echo $pet['text 2']; ?></P>
+        <P><?php echo $pet['text 2.2']; ?></P>
+        <P><?php echo $pet['text 2.3']; ?></P>
 		</div>
 
-        <div style="margin-top:50px; padding: 0px 25px;" class="col-11 mx-auto">
+        <div style="margin-top:50px; padding: 0px 25px;" data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="col-11 mx-auto">
         <h1 class="cal-12 title"><?php echo $pet['title 2'] ?></h1>
         <ul>
 	    <li class="list"><?php echo $pet['text 3.1']; ?></li>
@@ -140,22 +169,25 @@ $pet = mysqli_fetch_assoc($pets);
         </ul>
 		</div>
 
-        <div style="margin-top:50px; padding: 0px 25px;" class="col-11 mx-auto">
+        <div style="margin-top:50px; padding: 0px 25px;" data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="col-11 mx-auto">
         <h1 class="cal-12 title"><?php echo $pet['title 3'] ?></h1>
 	    <P><?php echo $pet['text 4']; ?></P>
 		</div>
 
-        <div style="margin-top:50px; padding: 0px 25px;" class="col-11 mx-auto">
+        <div style="margin-top:50px; padding: 0px 25px;" data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="col-11 mx-auto">
         <h1 class="cal-12 title"><?php echo $pet['title 4'] ?></h1>
 	    <P><?php echo $pet['text 5']; ?></P>
 		</div>
 
-        <div style="margin-top:50px; padding: 0px 25px;" class="col-11 mx-auto">
-        <h1 class="col-12 title"><?php echo $pet['title 5'] ?></h1>
+        <div style="margin-top:50px; padding: 0px 25px;" data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="col-11 mx-auto">
+        <h1 class="cal-12 title"><?php echo $pet['title 5'] ?></h1>
 	    <P><?php echo $pet['text 6']; ?></P>
 		</div>
 
     </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="includes/app.js"></script>
 
 </body>
 
